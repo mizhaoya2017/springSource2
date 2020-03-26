@@ -1,5 +1,6 @@
 package mybatis;
 
+import mybatis.dao.UserMapper;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.junit.Test;
@@ -19,7 +20,7 @@ public class TestMapper {
         SqlSession sqlSession = sqlSessionFactory.openSession();
         try {
             UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
-            User user = new User("tom", new Integer(5));
+            User user = new User(2, "tom", new Integer(5));
             userMapper.insertUser(user);
             sqlSession.commit();
         } finally {
