@@ -23,6 +23,6 @@ public class UserServiceImpl implements UserService {
         jdbcTemplate.update("insert into user(name, age, sex) values(?, ?, ?)",
                 new Object[]{user.getName(), user.getAge(), user.getSex()},
                 new int[] {Types.VARCHAR, Types.INTEGER, Types.VARCHAR});
-        throw new RuntimeException("aa");
+//        throw new RuntimeException("aa");
     }
 }
